@@ -1,8 +1,8 @@
 //import { useState } from 'react'
 //import './App.css'
 
-import Header from "./components/Header"
-import SalesCard from "./components/SalesCard"
+import Header from "./components/Header";
+import SalesCard from "./components/SalesCard";
 
 function App() {
   // comentário
@@ -20,4 +20,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

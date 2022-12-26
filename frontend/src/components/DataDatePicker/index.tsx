@@ -16,5 +16,5 @@ function DataDatePicker() {
     )
   }
   
-  export default DataDatePicker
+  export default DataDatePicker;
   
