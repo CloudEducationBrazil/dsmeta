@@ -1,14 +1,22 @@
 //import { useState } from 'react'
 //import './App.css'
 
-import NotificationButton from "./components/NotificationButton"
+import Header from "./components/Header"
+import SalesCard from "./components/SalesCard"
 
 function App() {
+  // comentário
   return (
-    <div>
-      <h1>Vite + ReactJs + TS</h1>
-      <NotificationButton />
-    </div>
+    <>
+      <Header />
+      <main>
+        <section id="sales">
+          <div className="dsmeta-container">
+            <SalesCard/>
+          </div>  
+        </section>
+      </main>
+    </>
   )
 }
 
