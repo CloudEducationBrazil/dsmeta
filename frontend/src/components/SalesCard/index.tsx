@@ -4,11 +4,19 @@ import "./styles.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import DataDatePicker from "../DataDatePicker";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function SalesCard() {
     const min = new Date(new Date().setDate(new Date().getDate() - 365));
     const [minDate, setMinDate] = useState(min);
+
+    //useEffect( () => {}, []);
+    useEffect( () => {
+        //console.log('teste');
+        axios.get("http://localhost:8080/sales").then(response => {console.log(response.data);
+    })
+    }, []);
 
     return (
         <>
