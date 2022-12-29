@@ -37,8 +37,16 @@ public class SmsService {
 		Sale sale = repository.findById(saleId).get();
 		String date = sale.getDate().getMonthValue() + "/" + sale.getDate().getYear();
 		
-		String corpoMessage = "Id" + saleId.toString() + " - o vendedor: " + sale.getSellerName() + 
-				              " foi destaque no mês " + date.toString() + " com um total de R$" + String.format("%.2f", sale.getAmount());
+		String corpoMessage = "Id: " + saleId.toString() + " - vendedor: " + sale.getSellerName() + 
+				              ", foi destaque no mês " + date.toString() + ", com um total de R$" + String.format("%.2f", sale.getAmount()) + ".";
+		
+		// String corpoMessage = "Id" + saleId.toString() + " - o vendedor: " + sale.getSellerName() + 
+        //                       " foi destaque no mês " + date.toString() + " com um total de R$" + 
+		// new DecimalFormat("#,###.00").format(sale.getAmount());
+		
+		// String corpoMessage = String.format("Id %s - o vendedor: %s foi destaque no mês %s com um total de R$ %.2f", 
+		// saleId.toString(), sale.getSellerName(), date.toString(), sale.getAmount());
+		
 
 		Message message = Message.creator(to, from, corpoMessage).create();
 
